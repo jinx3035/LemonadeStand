@@ -9,6 +9,7 @@ namespace LemonadeStand
     class Game
     {
         Player player;
+        Day weather;
         public void PlayGame()
         {
             Console.WriteLine("");
@@ -22,6 +23,13 @@ namespace LemonadeStand
             player = new Player();
             player.SetPlayerName();
             player.GreetPlayer();
+        }
+
+        //Get Weather and its effects
+        public void AdviseWeather()
+        {
+            weather = new Day();
+            weather.CreateWeather();
         }
     }
 }

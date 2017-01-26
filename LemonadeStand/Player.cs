@@ -9,7 +9,7 @@ namespace LemonadeStand
     class Player
     {
         public string name;
-        Recipe recipe;
+        //Recipe recipe;
         public string SetPlayerName()
         {
             Console.WriteLine("Please enter your name so the IRS knows who to tax for this operation.");
@@ -23,10 +23,10 @@ namespace LemonadeStand
             name = Console.ReadLine();
             return name;
         }
-        public void SetRecipe()
-        {
-            Recipe recipe = new Recipe();
-            recipe.MakeRecipe();
-        }
+        //public void SetRecipe()
+        //{
+        //    Recipe recipe = new Recipe();
+        //    recipe.MakeRecipe();
+        //}
     }
 }

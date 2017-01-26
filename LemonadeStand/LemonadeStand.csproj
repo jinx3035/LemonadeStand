@@ -58,7 +58,6 @@
     <Compile Include="Lemons.cs" />
     <Compile Include="PitcherPrice.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="PlayerName.cs" />
     <Compile Include="Price.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +67,7 @@
     <Compile Include="SugaCubes.cs" />
     <Compile Include="Supplies.cs" />
     <Compile Include="UnitPrice.cs" />
+    <Compile Include="Wallet.cs" />
     <Compile Include="Weather.cs" />
   </ItemGroup>
   <ItemGroup>
