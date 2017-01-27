@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Wallet
+    class Wallet: Player
     {
         public decimal walletBalance = 20.00M;
         public Wallet()

@@ -12,7 +12,15 @@ namespace LemonadeStand
         Player player;
         Day weather;
         Inventory supply;
-        public void PlayGame()
+        Store goShopping;
+        private int cups;
+        private int lemons;
+        private int sugarCubes;
+        private int iceCubes;
+        private double money;
+        private int demand;
+
+        public void StartGame()
         {
             Console.WriteLine("");
             Console.WriteLine("Welcome young aspiring entrepreneur! \n\nCongratulations on choosing a lemonade stand to gain your riches. ");
@@ -32,11 +40,12 @@ namespace LemonadeStand
         public void CurrentSituation()
         {
             Console.WriteLine("This is your current inventory along with todays weather forcast.\n");
+            weather = new Day();
+            weather.CreateWeather();
             supply = new Inventory();
             supply.InventoryReport();
             Console.WriteLine("");
-            weather = new Day();
-            weather.CreateWeather();
+
         }
 
         
@@ -47,8 +56,9 @@ namespace LemonadeStand
             switch (decision)
             {
                 case "1":
-                    Console.WriteLine("Go to store");
-                    Console.ReadLine();
+                    Store goShopping = new Store();
+                    goShopping.BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+
 
                     break;
                 case "2":

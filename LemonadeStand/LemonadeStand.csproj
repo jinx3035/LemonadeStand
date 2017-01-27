@@ -46,16 +46,13 @@
     <Compile Include="Cost.cs" />
     <Compile Include="CreateDay.cs" />
     <Compile Include="Cup.cs" />
-    <Compile Include="Cups.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Day.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="IceCube.cs" />
-    <Compile Include="IceBags.cs" />
     <Compile Include="Ingredients.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Lemon.cs" />
-    <Compile Include="Lemons.cs" />
     <Compile Include="PitcherPrice.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Price.cs" />
@@ -64,7 +61,6 @@
     <Compile Include="Recipe.cs" />
     <Compile Include="Store.cs" />
     <Compile Include="SugarCube.cs" />
-    <Compile Include="SugaCubes.cs" />
     <Compile Include="Supplies.cs" />
     <Compile Include="UnitPrice.cs" />
     <Compile Include="Wallet.cs" />
