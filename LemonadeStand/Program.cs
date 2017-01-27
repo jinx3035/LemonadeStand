@@ -12,7 +12,8 @@ namespace LemonadeStand
         {
             Game start = new Game();
             start.PlayGame();
-            start.AdviseWeather();
+            start.CurrentSituation();
+            start.BuyOrPlay();
         }
     }
 }

@@ -9,6 +9,8 @@ namespace LemonadeStand
     class Player
     {
         public string name;
+        public string choice;
+
         //Recipe recipe;
         public string SetPlayerName()
         {
@@ -19,9 +21,30 @@ namespace LemonadeStand
         public string GreetPlayer()
         {
             Console.WriteLine("");
-            Console.WriteLine("Hello " +name+ ". Good luck in this new endeavor. Lets begin.");
+            Console.WriteLine("Hello " +name+ ". Good luck in this new endeavor. Hit enter to begin.");
             name = Console.ReadLine();
             return name;
+        }
+        public string AskDecision()
+        {
+            Console.WriteLine("It's time to decide if you want to  order supplies or go to work. \n");
+            Console.WriteLine("1 Purchase supplies to stock up for the day.");
+            Console.WriteLine("2 Set lemonade price.");
+            Console.WriteLine("3 Go to work.");
+            choice = Console.ReadLine();
+
+             if (!(choice == "1" || choice == "2" || choice == "3"))
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Please choose 1, 2 or 3");
+                Console.ReadKey();
+                return AskDecision();
+            }
+            else
+            {
+                return choice;
+            }
+
         }
         //public void SetRecipe()
         //{

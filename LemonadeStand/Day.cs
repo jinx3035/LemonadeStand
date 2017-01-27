@@ -11,6 +11,7 @@ namespace LemonadeStand
         public string percipitation;
         public int temperature;
         public int ProbabilityOfRain;
+        public int numberOfCustomers;
         //public void CreateDay()
         //{
 
@@ -54,21 +55,26 @@ namespace LemonadeStand
             {
                 case 1:
                     ProbabilityOfRain = rand.Next(40, 80);
-                    percipitation = "cloudy with a " + ProbabilityOfRain + "% chance of rain...";
+                    percipitation = "cloudy and miserable with a " + ProbabilityOfRain + "% chance of rain...";
+                    if (temperature >= 50 && temperature <= 70)
+                    {
+                        numberOfCustomers = rand.Next(40, 80);
+                    }
                     break;
                 case 2:
-                    percipitation = "rainy...";
+                    ProbabilityOfRain = rand.Next(0, 2);
+                    percipitation = "absolutely beautiful outside with " + ProbabilityOfRain + "% chance of rain...";
                     break;
                 case 3:
-                    ProbabilityOfRain = rand.Next(1, 15);
-                    percipitation = "sunny with a " + ProbabilityOfRain + "% chance of rain...";
+                    ProbabilityOfRain = rand.Next(15, 25);
+                    percipitation = "slightly overcast with a " + ProbabilityOfRain + "% chance of rain...";
                     break;
                 case 4:
                     ProbabilityOfRain = rand.Next(1, 30);
                     percipitation = "breezy with a " + ProbabilityOfRain + "% chance of rain...";
                     break;
                 case 5:
-                    ProbabilityOfRain = rand.Next(30, 60);
+                    ProbabilityOfRain = rand.Next(20, 50);
                     percipitation = "hazy with a " + ProbabilityOfRain + "% chance of rain...";
                     break;
             }

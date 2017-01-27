@@ -8,9 +8,16 @@ namespace LemonadeStand
 {
     class Inventory
     {
+
         public List<Cup> cups = new List<Cup>();
         public List<Lemon> lemons = new List<Lemon>();
         public List<SugarCube> sugarCubes = new List<SugarCube>();
         public List<IceCube> iceCubes = new List<IceCube>();
+
+
+        public void InventoryReport()
+        {
+            Console.WriteLine("Ice cubes on hand are\t\t[" + (iceCubes.Count) + "]" + "\nLemons on hand are\t\t[" + (lemons.Count) + "]" + "\nPaper cups on hand are\t\t[" + (cups.Count) + "]" + "\nCups of Sugar on hand are\t[" + (sugarCubes.Count) + "]");
+        }
     }
 }
