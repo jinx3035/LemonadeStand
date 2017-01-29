@@ -8,22 +8,22 @@ namespace LemonadeStand
 {
     class Store
     {
-        public void BuyItems(int cups, int lemons, int sugarCubes, int iceCubes, double money, int demand)
+        public void BuyItems(double money, Inventory ingredient)
         {
-            int buy = Int32.Parse(BuyItemMenu());
+            int buy = int.Parse(BuyItemMenu());
            
             switch (buy)
             {
                 case 1:
                     Console.WriteLine("");
-                    Console.WriteLine("How many paper cups would you like to buy?");
+                    Console.WriteLine("How many cups would you like to buy?");
                     int buyCups = Convert.ToInt16(Console.ReadLine());
+                    ingredient.AddCups(buyCups);
                     if (money >= buyCups * .40)
                     {
                         money = Math.Round((money - (buyCups * .40)), 2);
-                        cups = cups + buyCups;
                         Console.WriteLine("");
-                        Console.WriteLine("You just purchased {0} cups and have {1} in your supply cart", buyCups, cups);
+                        Console.WriteLine("You just purchased {0} cups and have {1} in your supply cart", buyCups, ingredient);
                         Console.WriteLine("You have ${0} in cash.", money);
                         Console.WriteLine("");
                         Console.WriteLine("Would you like to buy anything else?");
@@ -31,7 +31,7 @@ namespace LemonadeStand
                         string buyMore = Console.ReadLine();
                         if (buyMore == "yes")
                         {
-                            BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+                            BuyItems(money, ingredient);
                         }
                         else
                         {
@@ -42,7 +42,7 @@ namespace LemonadeStand
                     {
                         Console.WriteLine("Sorry, you do not have enough money to buy that.");
                         Console.ReadKey();
-                        BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+                        BuyItems(money, ingredient);
                     }
                     Console.WriteLine("");
                     break;
@@ -53,9 +53,8 @@ namespace LemonadeStand
                     if (money >= (buyLemons * .30))
                     {
                         money = Math.Round((money - (buyLemons * .30)), 2);
-                        lemons = lemons + buyLemons;
                         Console.WriteLine("");
-                        Console.WriteLine("You just purchased {0} lemons and have {1} in your inventory", buyLemons, lemons);
+                        //Console.WriteLine("You just purchased {0} lemons and have {1} in your inventory", buyLemons, lemons);
                         Console.WriteLine("You have ${0} in cash.", money);
                         Console.WriteLine("");
                         Console.WriteLine("Would you like to buy anything else?");
@@ -63,7 +62,7 @@ namespace LemonadeStand
                         string buyMore = Console.ReadLine();
                         if (buyMore == "yes")
                         {
-                            BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+                            BuyItems(money, ingredient);
                         }
                         else
                         {
@@ -74,7 +73,7 @@ namespace LemonadeStand
                     {
                         Console.WriteLine("Sorry, you do not have enough money to buy that.");
                         Console.ReadKey();
-                        BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+                        BuyItems(money, ingredient);
                     }
                     Console.WriteLine("");
                     break;
@@ -85,9 +84,8 @@ namespace LemonadeStand
                     if (money >= (buySugarCubes * .15))
                     {
                         money = Math.Round((money - (buySugarCubes * .15)), 2);
-                        sugarCubes = sugarCubes + buySugarCubes;
                         Console.WriteLine("");
-                        Console.WriteLine("You just purchased {0} sugar cubes and have {1} in your inventory", buySugarCubes, sugarCubes);
+                        //Console.WriteLine("You just purchased {0} sugar cubes and have {1} in your inventory", buySugarCubes, sugarCubes);
                         Console.WriteLine("You have ${0} in cash.", money);
                         Console.WriteLine("");
                         Console.WriteLine("Would you like to buy anything else?");
@@ -95,7 +93,7 @@ namespace LemonadeStand
                         string buyMore = Console.ReadLine();
                         if (buyMore == "yes")
                         {
-                            BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+                            BuyItems(money, ingredient);
                         }
                         else
                         {
@@ -106,7 +104,7 @@ namespace LemonadeStand
                     {
                         Console.WriteLine("Sorry, you do not have enough money to buy that.");
                         Console.ReadKey();
-                        BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+                        BuyItems(money, ingredient);
                     }
                     Console.WriteLine("");
                     break;
@@ -117,9 +115,8 @@ namespace LemonadeStand
                     if (money >= (buyIceCubes * .10))
                     {
                         money = Math.Round((money - (buyIceCubes * .10)), 2);
-                        iceCubes = iceCubes + buyIceCubes;
                         Console.WriteLine("");
-                        Console.WriteLine("You just purchased {0} sugar cubes and have {1} in your inventory", buyIceCubes, iceCubes);
+                        //Console.WriteLine("You just purchased {0} sugar cubes and have {1} in your inventory", buyIceCubes, iceCubes);
                         Console.WriteLine("You have ${0} in cash.", money);
                         Console.WriteLine("");
                         Console.WriteLine("Would you like to buy anything else?");
@@ -128,7 +125,7 @@ namespace LemonadeStand
                         if (buyMore == "yes")
                         {
 
-                            BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+                            BuyItems(money, ingredient);
                         }
                         else
                         {
@@ -139,7 +136,7 @@ namespace LemonadeStand
                     {
                         Console.WriteLine("Sorry, you do not have enough money to buy that.");
                         Console.ReadKey();
-                        BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+                        BuyItems(money, ingredient);
                     }
                     Console.WriteLine("");
                     break;
@@ -156,7 +153,7 @@ namespace LemonadeStand
             Console.WriteLine("-----------------------------");
             Console.WriteLine("Let's buy some supplies...");
             Console.WriteLine("");
-            Console.WriteLine("You have ${0} in petty cash."); //money);
+            Console.WriteLine("You have ${0} in cash.");//,money);
             Console.WriteLine("");
             Console.WriteLine("What would you like to buy?");
             Console.WriteLine("-----------------------------");

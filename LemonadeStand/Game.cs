@@ -13,12 +13,9 @@ namespace LemonadeStand
         Day weather;
         Inventory supply;
         Store goShopping;
-        private int cups;
-        private int lemons;
-        private int sugarCubes;
-        private int iceCubes;
+
         private double money;
-        private int demand;
+
 
         public void StartGame()
         {
@@ -57,7 +54,7 @@ namespace LemonadeStand
             {
                 case "1":
                     Store goShopping = new Store();
-                    goShopping.BuyItems(cups, lemons, sugarCubes, iceCubes, money, demand);
+                    goShopping.BuyItems(money);
 
 
                     break;

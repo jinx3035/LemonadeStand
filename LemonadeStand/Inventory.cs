@@ -19,5 +19,13 @@ namespace LemonadeStand
         {
             Console.WriteLine("Ice cubes on hand are\t\t[" + (iceCubes.Count) + "]" + "\nLemons on hand are\t\t[" + (lemons.Count) + "]" + "\nPaper cups on hand are\t\t[" + (cups.Count) + "]" + "\nCups of Sugar on hand are\t[" + (sugarCubes.Count) + "]");
         }
+        public void AddCups(double amount)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                Cup cup = new Cup();
+                cups.Add(cup);
+            }
+        }
     }
 }
