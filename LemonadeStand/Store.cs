@@ -13,6 +13,8 @@ namespace LemonadeStand
         decimal lemonPrice = .30m;
         decimal sugarCubePrice = .15m;
         decimal iceCubePrice = .10m;
+        private string item;
+
         public void BuyItems(Player player, Inventory ingredient)
         {
             int buy = int.Parse(BuyItemMenu(player));
@@ -46,9 +48,7 @@ namespace LemonadeStand
                     }
                     else
                     {
-                        Console.WriteLine("Sorry, you do not have enough money to buy that.");
-                        Console.ReadKey();
-                        BuyItems(player, ingredient);
+                        InsufficientFunds("cups", player, ingredient);
                     }
                     Console.WriteLine("");
                     break;
@@ -79,9 +79,7 @@ namespace LemonadeStand
                     }
                     else
                     {
-                        Console.WriteLine("Sorry, you do not have enough money to buy that.");
-                        Console.ReadKey();
-                        BuyItems(player, ingredient);
+                        InsufficientFunds("lemons", player, ingredient);
                     }
                     Console.WriteLine("");
                     break;
@@ -112,15 +110,13 @@ namespace LemonadeStand
                     }
                     else
                     {
-                        Console.WriteLine("Sorry, you do not have enough money to buy that.");
-                        Console.ReadKey();
-                        BuyItems(player, ingredient);
+                        InsufficientFunds("sugar cubes", player, ingredient);
                     }
                     Console.WriteLine("");
                     break;
                 case 4:
                     Console.WriteLine("");
-                    Console.WriteLine("How many cups of water would you like to buy?");
+                    Console.WriteLine("How many ice cubes would you like to buy?");
                     decimal buyIceCubes = Convert.ToDecimal(Console.ReadLine());
                     ingredient.AddIceCubes(buyIceCubes);
                     decimal iceCubeCost = Decimal.Multiply(buyIceCubes, iceCubePrice);
@@ -128,7 +124,7 @@ namespace LemonadeStand
                     {
                         player.money.WalletBalance = Math.Round((player.money.WalletBalance - (iceCubeCost)), 2);
                         Console.WriteLine("");
-                        Console.WriteLine("You just purchased {0} sugar cubes and have {1} in your inventory", buyIceCubes, ingredient);
+                        Console.WriteLine("You just purchased {0} ice cubes and have {1} in your inventory", buyIceCubes, ingredient);
                         Console.WriteLine("You have ${0} in cash.", player.money.WalletBalance);
                         Console.WriteLine("");
                         Console.WriteLine("Would you like to buy anything else?");
@@ -146,9 +142,7 @@ namespace LemonadeStand
                     }
                     else
                     {
-                        Console.WriteLine("Sorry, you do not have enough money to buy that.");
-                        Console.ReadKey();
-                        BuyItems(player, ingredient);
+                        InsufficientFunds("ice cubes", player, ingredient);
                     }
                     Console.WriteLine("");
                     break;
@@ -175,6 +169,13 @@ namespace LemonadeStand
             Console.WriteLine("4: ice cubes");
             string menu = Console.ReadLine();
             return  menu; 
+        }
+
+        private void InsufficientFunds(string item, Player player, Inventory ingredient)
+        {
+            Console.WriteLine("Sorry, you do not have enough money to buy that many " + item);
+            Console.ReadKey();
+            BuyItems(player, ingredient);
         }
     }
 }

@@ -25,31 +25,19 @@ namespace LemonadeStand
             temperature = rand.Next(5, 105);
             if (temperature <= 25)
             {
-                ChanceofRain();
-                Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside and " + percipitation);
-                //PotentialCustomers();
-                Console.ReadLine();
+                DisplayForcast();
             }
                 if (temperature >= 26 && temperature <= 50)
             {
-                ChanceofRain();
-                Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside and " + percipitation);
-                //PotentialCustomers();
-                Console.ReadLine();
+                DisplayForcast();
             }
             else if (temperature > 51 && temperature < 75)
             {
-                ChanceofRain();
-                Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside and " + percipitation);
-                //PotentialCustomers();
-                Console.ReadLine();
+                DisplayForcast();
             }
             else
             {
-                ChanceofRain();
-                Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside and " + percipitation);
-                //PotentialCustomers();
-                Console.ReadLine();
+                DisplayForcast();
             }
         }
         public void ChanceofRain()
@@ -84,6 +72,13 @@ namespace LemonadeStand
                     percipitation = "hazy with a " + probabilityOfRain + "% chance of rain...";
                     break;
             }
+        }
+        public void DisplayForcast()
+        {
+            ChanceofRain();
+            Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside and " + percipitation);
+            //PotentialCustomers();
+            Console.ReadLine();
         }
     }
 }

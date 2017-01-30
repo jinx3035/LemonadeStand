@@ -14,15 +14,15 @@ namespace LemonadeStand
 
         //    if (temperature >= 30 && temperature <= 70)
         //    {
-        //        day.numberOfCustomers = rand.Next(, 80);
+        //        day.numberOfCustomers = rand.Next(150, 200);
         //    }
         //    else if (temperature > 70 && temperature < 90)
         //    {
-        //        day.numberOfCustomers = rand.Next(80, 120);
+        //        day.numberOfCustomers = rand.Next(200, 250);
         //    }
         //    else
         //    {
-        //        day.numberOfCustomers = rand.Next(20, 40);
+        //        day.numberOfCustomers = rand.Next(50, 100);
         //    }
         //    return day.numberOfCustomers;
         //}
