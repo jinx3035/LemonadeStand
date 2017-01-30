@@ -12,9 +12,7 @@ namespace LemonadeStand
         Player player;
         Day weather;
         Inventory supply;
-        //Store goShopping;
-        private double money;
-        private Inventory ingredient;
+
 
         public void StartGame()
         {

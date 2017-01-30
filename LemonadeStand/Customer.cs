@@ -8,9 +8,28 @@ namespace LemonadeStand
 {
     class Customer
     {
-        public int numberOfCustomers;
+        public decimal numberOfCustomers;
         private int type;
-        private int buyProbability;
+        private decimal buyProbability;
+        public decimal CustomerPopulation()
+        {
+            Random rand = new Random();
+
+            decimal temp = 0;
+            if (temp >= 30 && temp <= 70)
+            {
+                numberOfCustomers = rand.Next(126, 200);
+            }
+            else if (temp > 70 && temp < 90)
+            {
+                numberOfCustomers = rand.Next(201, 300);
+            }
+            else
+            {
+                numberOfCustomers = rand.Next(50, 125);
+            }
+            return numberOfCustomers;
+        }
 
         public void CustomerType()
         {
@@ -41,24 +60,37 @@ namespace LemonadeStand
             }
         }
 
-        public int BuyProbability()
+        public void BuyProbability(List<Customer> dailyCustomers)
         {
-            Random rand = new Random();
-
-            int temp = 0;
-            if (temp >= 30 && temp <= 70)
+            if (numberOfCustomers >= 126 && numberOfCustomers <= 200)
             {
-                numberOfCustomers = rand.Next(126, 200);
+                MakeCustomers(dailyCustomers);
             }
-            else if (temp > 70 && temp < 90)
+            else if (numberOfCustomers >= 201 && numberOfCustomers <= 300)
             {
-                numberOfCustomers = rand.Next(201, 300);
+                MakeCustomers(dailyCustomers);
             }
             else
             {
-                numberOfCustomers = rand.Next(50, 125);
+                MakeCustomers(dailyCustomers);               
             }
-            return numberOfCustomers;
+        }
+
+        private int DetermineBuyPercentage()
+        {
+            decimal multipliedResult = numberOfCustomers * (buyProbability / 100);
+            decimal roundedResult = Math.Round(multipliedResult, 0);
+            int endResult = Decimal.ToInt32(roundedResult);           
+            return endResult;
+        }
+        private void MakeCustomers(List<Customer> dailyCustomers)
+        {
+            int totalBuyers = DetermineBuyPercentage();
+            for (int i = 0; i < totalBuyers; i++)
+            {
+                Customer customer = new Customer();
+                dailyCustomers.Add(customer);
+            }
         }
 
     }

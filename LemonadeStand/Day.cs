@@ -13,10 +13,10 @@ namespace LemonadeStand
         public int temperature;
         public int rain;
         public List<Customer> customers = new List<Customer>();
-        //public void CreateDay()
-        //{
+        public void CreateDay()
+        {
 
-        //}
+        }
 
         public void CreateWeather()
         {

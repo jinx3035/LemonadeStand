@@ -19,7 +19,6 @@ namespace LemonadeStand
             ingredient = new Inventory();
         }
 
-        //Recipe recipe;
         public string SetPlayerName()
         {
             Console.WriteLine("Please enter your name so the IRS knows who to tax for this operation.");
