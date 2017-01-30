@@ -12,15 +12,14 @@ namespace LemonadeStand
         Player player;
         Day weather;
         Inventory supply;
-        Store goShopping;
-
+        //Store goShopping;
         private double money;
-
+        private Inventory ingredient;
 
         public void StartGame()
         {
             Console.WriteLine("");
-            Console.WriteLine("Welcome young aspiring entrepreneur! \n\nCongratulations on choosing a lemonade stand to gain your riches. ");
+            Console.WriteLine("Congratulations on choosing a lemonade stand to gain your riches. ");
             Console.WriteLine("Pay attention now. There are decisions to be made that will decide your success or failure.\n");
             Console.WriteLine("You must aquire supplies consisting of cups, lemons, sugars, and ice, then set a recipe.");
             Console.WriteLine("I have provided you my last $20 to help you establish an inventory so don't let me down.\n");
@@ -54,8 +53,8 @@ namespace LemonadeStand
             {
                 case "1":
                     Store goShopping = new Store();
-                    goShopping.BuyItems(money);
-
+                    goShopping.BuyItems(player, player.ingredient);
+                    BuyOrPlay();
 
                     break;
                 case "2":

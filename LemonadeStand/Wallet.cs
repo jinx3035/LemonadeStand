@@ -6,17 +6,29 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Wallet: Player
+    class Wallet
     {
-        public decimal walletBalance = 20.00M;
-        public Wallet()
+        public decimal WalletBalance = 20.00M;
+
+
+    public void ShowWalletBalance()
+        {
+            Console.WriteLine(WalletBalance);
+        }
+    public void AddWalletBalance(decimal amount)
         {
 
         }
-
-    public void showWalletBalance()
+    public bool CheckBalance(decimal amount)
         {
-            Console.WriteLine(walletBalance);
+            if(amount <= WalletBalance)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

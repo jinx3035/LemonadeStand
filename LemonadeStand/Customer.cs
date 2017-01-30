@@ -12,9 +12,9 @@ namespace LemonadeStand
         //{
         //    Random rand = new Random();
 
-        //    if (temperature >= 50 && temperature <= 70)
+        //    if (temperature >= 30 && temperature <= 70)
         //    {
-        //        day.numberOfCustomers = rand.Next(40, 80);
+        //        day.numberOfCustomers = rand.Next(, 80);
         //    }
         //    else if (temperature > 70 && temperature < 90)
         //    {

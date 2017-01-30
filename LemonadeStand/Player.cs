@@ -10,6 +10,14 @@ namespace LemonadeStand
     {
         public string name;
         public string choice;
+        public Wallet money;
+        public Inventory ingredient;
+
+        public Player()
+        {
+            money = new Wallet();
+            ingredient = new Inventory();
+        }
 
         //Recipe recipe;
         public string SetPlayerName()
