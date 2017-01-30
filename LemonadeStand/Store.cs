@@ -13,7 +13,7 @@ namespace LemonadeStand
         decimal lemonPrice = .30m;
         decimal sugarCubePrice = .15m;
         decimal iceCubePrice = .10m;
-        private string item;
+
 
         public void BuyItems(Player player, Inventory ingredient)
         {

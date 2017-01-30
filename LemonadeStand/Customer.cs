@@ -8,23 +8,58 @@ namespace LemonadeStand
 {
     class Customer
     {
-        //public int Customers()
-        //{
-        //    Random rand = new Random();
+        public int numberOfCustomers;
+        private int type;
+        private int buyProbability;
 
-        //    if (temperature >= 30 && temperature <= 70)
-        //    {
-        //        day.numberOfCustomers = rand.Next(150, 200);
-        //    }
-        //    else if (temperature > 70 && temperature < 90)
-        //    {
-        //        day.numberOfCustomers = rand.Next(200, 250);
-        //    }
-        //    else
-        //    {
-        //        day.numberOfCustomers = rand.Next(50, 100);
-        //    }
-        //    return day.numberOfCustomers;
-        //}
+        public void CustomerType()
+        {
+            Random rand = new Random();
+            type = rand.Next(1, 6);
+            switch(type)
+            {
+                case 1:
+                    Random randBuy1 = new Random();
+                    buyProbability = rand.Next(80, 100);
+                    break;
+                case 2:
+                    Random randBuy2 = new Random();
+                    buyProbability = rand.Next(60, 85);
+                    break;
+                case 3:
+                    Random randBuy3 = new Random();
+                    buyProbability = rand.Next(40, 65);
+                    break;
+                case 4:
+                    Random randBuy4 = new Random();
+                    buyProbability = rand.Next(20, 45);
+                    break;
+                case 5:
+                    Random randBuy5 = new Random();
+                    buyProbability = rand.Next(5, 25);
+                    break;
+            }
+        }
+
+        public int BuyProbability()
+        {
+            Random rand = new Random();
+
+            int temp = 0;
+            if (temp >= 30 && temp <= 70)
+            {
+                numberOfCustomers = rand.Next(126, 200);
+            }
+            else if (temp > 70 && temp < 90)
+            {
+                numberOfCustomers = rand.Next(201, 300);
+            }
+            else
+            {
+                numberOfCustomers = rand.Next(50, 125);
+            }
+            return numberOfCustomers;
+        }
+
     }
 }

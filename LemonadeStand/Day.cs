@@ -8,10 +8,11 @@ namespace LemonadeStand
 {
     class Day
     {
+
         public string percipitation;
         public int temperature;
-        public int probabilityOfRain;
-        public int numberOfCustomers;
+        public int rain;
+        public List<Customer> customers = new List<Customer>();
         //public void CreateDay()
         //{
 
@@ -40,6 +41,13 @@ namespace LemonadeStand
                 DisplayForcast();
             }
         }
+        public void DisplayForcast()
+        {
+            ChanceofRain();
+            Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside " + percipitation);
+            //PotentialCustomers();
+            Console.ReadLine();
+        }
         public void ChanceofRain()
         {
             Random rand = new Random();
@@ -48,37 +56,26 @@ namespace LemonadeStand
             switch (forecast)
             {
                 case 1:
-                    probabilityOfRain = rand.Next(40, 80);
-                    percipitation = "cloudy and miserable with a " + probabilityOfRain + "% chance of rain...";
-                    if (temperature >= 50 && temperature <= 70)
-                    {
-                        numberOfCustomers = rand.Next(40, 80);
-                    }
+                    
                     break;
                 case 2:
-                    probabilityOfRain = rand.Next(0, 2);
-                    percipitation = "absolutely beautiful outside with " + probabilityOfRain + "% chance of rain...";
+                    rain = rand.Next(0, 15);
+                    percipitation ="with a " + rain + "% chance of rain...";
                     break;
                 case 3:
-                    probabilityOfRain = rand.Next(15, 25);
-                    percipitation = "slightly overcast with a " + probabilityOfRain + "% chance of rain...";
+                    rain = rand.Next(15, 45);
+                    percipitation = "with a " + rain + "% chance of rain...";
                     break;
                 case 4:
-                    probabilityOfRain = rand.Next(1, 30);
-                    percipitation = "breezy with a " + probabilityOfRain + "% chance of rain...";
+                    rain = rand.Next(40, 70);
+                    percipitation = "with a " + rain + "% chance of rain...";
                     break;
                 case 5:
-                    probabilityOfRain = rand.Next(20, 50);
-                    percipitation = "hazy with a " + probabilityOfRain + "% chance of rain...";
+                    rain = rand.Next(20, 90);
+                    percipitation = "with a " + rain + "% chance of rain...";
                     break;
             }
         }
-        public void DisplayForcast()
-        {
-            ChanceofRain();
-            Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside and " + percipitation);
-            //PotentialCustomers();
-            Console.ReadLine();
-        }
+
     }
 }
