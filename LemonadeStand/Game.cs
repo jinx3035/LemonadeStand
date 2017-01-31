@@ -17,26 +17,20 @@ namespace LemonadeStand
         public void StartGame()
         {
             ShowGameMenu();
-            //need to call new player differently?
             player = new Player();
             player.SetPlayerName();
+            player.GreetPlayer();
+            weather = new Day();
+            supply = new Inventory();
+            for (int i = 0; i < 7; i++)
+            {
+                BuyOrPlay();                
+            }
 
-
-
-
-            CurrentSituation();
         }
             
         //Create a for loop to generate a new day here?
-        public void CurrentSituation()
-        {
-            weather = new Day();
-            weather.CreateWeather();
-            supply = new Inventory();
-            supply.InventoryReport();
-            Console.WriteLine("");
-            BuyOrPlay();
-        }
+
 
         
         //"Now create a switch to decide between ordering suplies and running the day."
@@ -57,17 +51,17 @@ namespace LemonadeStand
 
                     break;
                 case "3":
-                    weather.CreateDay();
-
-
+                    weather.CurrentSituation(weather, supply);
 
                     break;
-                default: Console.WriteLine("");
-                    Console.ReadLine();
+
+                default: Console.WriteLine("The game will be restarted");
+                    Console.ReadKey();
+                    StartGame();
                     break;
             }              
         }
-        void ShowGameMenu()
+        public void ShowGameMenu()
         {
             Console.WriteLine("");
             Console.WriteLine("Congratulations on choosing a lemonade stand to gain your riches. ");

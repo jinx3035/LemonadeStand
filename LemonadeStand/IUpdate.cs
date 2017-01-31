@@ -8,6 +8,6 @@ namespace LemonadeStand
 {
     interface IUpDate
     {
-        void UpDate(double amount);
+        void UpDate();
     }
 }

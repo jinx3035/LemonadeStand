@@ -12,6 +12,14 @@ namespace LemonadeStand
         public string percipitation;
         public int temperature;
         public List<Customer> dailyCustomers = new List<Customer>();
+
+        public void CurrentSituation(Day day, Inventory inventory)
+        {
+            inventory.InventoryReport();
+            Console.WriteLine("");
+            CreateDay();
+        }
+
         public void CreateDay()
         {
             CreateWeather();
