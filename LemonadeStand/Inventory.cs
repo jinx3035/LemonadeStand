@@ -8,7 +8,7 @@ namespace LemonadeStand
 {
     class Inventory//: IUpDate
     {
-        //public void UpDate(double amount)
+        //public void UpDate(decimal amount)
         //{
         //    for (int i = 0; i < amount; i++)
         //    {

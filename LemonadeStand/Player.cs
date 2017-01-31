@@ -29,12 +29,13 @@ namespace LemonadeStand
         public void GreetPlayer()
         {
             Console.WriteLine("");
-            Console.WriteLine("Hello " +name+ "and good luck in this new endeavor. \n Remember to keep in mind that the weather affects customer turn out so make sure not to order too much.");
+            Console.WriteLine("Hello " +name+ " and good luck running your Lemonade Stand. \n Remember to keep in mind that the weather affects customer turn out so make sure not to order too much.");
             name = Console.ReadLine();
           
         }
         public string AskDecision()
         {
+            Console.Clear();
             Console.WriteLine("");
             Console.WriteLine("It's time to decide if you want to  order supplies or go to work. \n");
             Console.WriteLine("1 Purchase supplies to stock up for the day.");

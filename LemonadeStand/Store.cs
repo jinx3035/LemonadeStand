@@ -13,7 +13,7 @@ namespace LemonadeStand
         decimal lemonPrice = .30m;
         decimal sugarCubePrice = .15m;
         decimal iceCubePrice = .10m;
-
+        Player player;
 
         public void BuyItems(Player player, Inventory ingredient)
         {
@@ -31,7 +31,7 @@ namespace LemonadeStand
                     {
                         player.money.WalletBalance = Math.Round((player.money.WalletBalance - (cupCost)), 2);
                         Console.WriteLine("");
-                        Console.WriteLine("You just purchased {0} cups and have {1} in your supply cart", buyCups, ingredient);
+                        Console.WriteLine("You just purchased {0} cups and have {1} in your supply cart", buyCups, ingredient.cups);
                         Console.WriteLine("You have ${0} in cash.", player.money.WalletBalance);
                         Console.WriteLine("");
                         Console.WriteLine("Would you like to buy anything else?");
@@ -43,7 +43,8 @@ namespace LemonadeStand
                         }
                         else
                         {
-                           
+                            Console.Clear();
+                            this.player.AskDecision();                                
                         }
                     }
                     else
@@ -62,7 +63,7 @@ namespace LemonadeStand
                     {
                         player.money.WalletBalance = Math.Round((player.money.WalletBalance - (lemonCost)), 2);
                         Console.WriteLine("");
-                        Console.WriteLine("You just purchased {0} lemons and have {1} in your inventory", buyLemons, ingredient);
+                        Console.WriteLine("You just purchased {0} lemons and have {1} in your inventory", buyLemons, ingredient.lemons);
                         Console.WriteLine("You have ${0} in cash.", player.money.WalletBalance);
                         Console.WriteLine("");
                         Console.WriteLine("Would you like to buy anything else?");
@@ -74,7 +75,8 @@ namespace LemonadeStand
                         }
                         else
                         {
-
+                            Console.Clear();
+                            this.player.AskDecision();
                         }
                     }
                     else
@@ -93,7 +95,7 @@ namespace LemonadeStand
                     {
                         player.money.WalletBalance = Math.Round((player.money.WalletBalance - (sugarCubeCost)), 2);
                         Console.WriteLine("");
-                        Console.WriteLine("You just purchased {0} sugar cubes and have {1} in your inventory", buySugarCubes, ingredient);
+                        Console.WriteLine("You just purchased {0} sugar cubes and have {1} in your inventory", buySugarCubes, ingredient.sugarCubes);
                         Console.WriteLine("You have ${0} in cash.", player.money.WalletBalance);
                         Console.WriteLine("");
                         Console.WriteLine("Would you like to buy anything else?");
@@ -105,7 +107,8 @@ namespace LemonadeStand
                         }
                         else
                         {
-
+                            Console.Clear();
+                            this.player.AskDecision();
                         }
                     }
                     else
@@ -124,7 +127,7 @@ namespace LemonadeStand
                     {
                         player.money.WalletBalance = Math.Round((player.money.WalletBalance - (iceCubeCost)), 2);
                         Console.WriteLine("");
-                        Console.WriteLine("You just purchased {0} ice cubes and have {1} in your inventory", buyIceCubes, ingredient);
+                        Console.WriteLine("You just purchased {0} ice cubes and have {1} in your inventory", buyIceCubes, ingredient.iceCubes);
                         Console.WriteLine("You have ${0} in cash.", player.money.WalletBalance);
                         Console.WriteLine("");
                         Console.WriteLine("Would you like to buy anything else?");
@@ -137,7 +140,8 @@ namespace LemonadeStand
                         }
                         else
                         {
-
+                            Console.Clear();
+                            this.player.AskDecision();
                         }
                     }
                     else

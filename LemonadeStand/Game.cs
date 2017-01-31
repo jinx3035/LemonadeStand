@@ -46,12 +46,13 @@ namespace LemonadeStand
 
                     break;
                 case "2":
-                    Console.WriteLine("set price");
+                    Console.WriteLine("set lemonade price");
                     Console.ReadLine();
 
                     break;
                 case "3":
                     weather.CurrentSituation(weather, supply);
+                    //Run the days calculations
 
                     break;
 
