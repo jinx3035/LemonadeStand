@@ -16,12 +16,13 @@ namespace LemonadeStand
 
         public void StartGame()
         {
-            StartGameMenu();
-            Console.ReadLine();
-
+            ShowGameMenu();
             player = new Player();
             player.SetPlayerName();
-            player.GreetPlayer();
+
+
+
+
             CurrentSituation();
         }
 
@@ -65,7 +66,7 @@ namespace LemonadeStand
                     break;
             }              
         }
-        void StartGameMenu()
+        void ShowGameMenu()
         {
             Console.WriteLine("");
             Console.WriteLine("Congratulations on choosing a lemonade stand to gain your riches. ");
@@ -74,7 +75,6 @@ namespace LemonadeStand
             Console.WriteLine("I have provided you my last $20 to help you establish an inventory so don't let me down.\n");
             Console.WriteLine("Pay attention to the weather because it will directly affect how many customers come out to buy your product.");
             Console.WriteLine("So adjust your price accordingly and pay attention to your inventory as some of it may have experation dates. \n");
-            Console.WriteLine("Press enter to continue.");
         }
     }
 }

@@ -11,12 +11,11 @@ namespace LemonadeStand
 
         public string percipitation;
         public int temperature;
-        public int rain;
         public List<Customer> dailyCustomers = new List<Customer>();
         public void CreateDay()
         {
             CreateWeather();
-            ChanceofRain();
+            ChanceOfRain();
             DisplayForcast();
             Customer population = new Customer();
             population.CustomerPopulation();
@@ -49,7 +48,7 @@ namespace LemonadeStand
             }
         }
 
-        public void ChanceofRain()
+        public void ChanceOfRain()
         {
             Random rand = new Random();
             int rain = rand.Next(5, 95);
@@ -58,9 +57,12 @@ namespace LemonadeStand
 
         public void DisplayForcast()
         {
-            ChanceofRain();
-            Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside " + percipitation);
-            //PotentialCustomers();
+            Console.Clear();
+            ChanceOfRain();
+            Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside " + percipitation );
+            Console.WriteLine("");
+            Console.WriteLine("Pay attention to the weather because it will directly affect how many customers come out to buy your product.");
+            Console.WriteLine("So adjust your price accordingly and pay attention to your inventory as some of it may have experation dates. \n");
             Console.ReadLine();
         }
 
