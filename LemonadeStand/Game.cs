@@ -17,6 +17,7 @@ namespace LemonadeStand
         public void StartGame()
         {
             ShowGameMenu();
+            //need to call new player differently?
             player = new Player();
             player.SetPlayerName();
 
@@ -25,10 +26,10 @@ namespace LemonadeStand
 
             CurrentSituation();
         }
-
+            
+        //Create a for loop to generate a new day here?
         public void CurrentSituation()
         {
-           // Console.WriteLine("This is your current inventory along with todays weather forcast.\n");
             weather = new Day();
             weather.CreateWeather();
             supply = new Inventory();
