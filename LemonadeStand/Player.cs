@@ -28,7 +28,8 @@ namespace LemonadeStand
         public string GreetPlayer()
         {
             Console.WriteLine("");
-            Console.WriteLine("Hello " +name+ ". Good luck in this new endeavor. Hit enter to begin.");
+            Console.WriteLine("Hello " +name+ "and good luck in this new endeavor. \n Remember to keep in mind that the weather affects customer turn out so make sure not to order too much.");
+            Console.WriteLine("Press enter to begin.");
             name = Console.ReadLine();
             return name;
         }

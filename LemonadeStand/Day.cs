@@ -12,10 +12,17 @@ namespace LemonadeStand
         public string percipitation;
         public int temperature;
         public int rain;
-        public List<Customer> customers = new List<Customer>();
+        public List<Customer> dailyCustomers = new List<Customer>();
         public void CreateDay()
         {
-
+            CreateWeather();
+            ChanceofRain();
+            DisplayForcast();
+            Customer population = new Customer();
+            population.CustomerPopulation();
+            population.CustomerType();
+            population.DetermineBuyPercentage();
+            population.BuyProbability(dailyCustomers);
         }
 
         public void CreateWeather()
@@ -41,6 +48,14 @@ namespace LemonadeStand
                 DisplayForcast();
             }
         }
+
+        public void ChanceofRain()
+        {
+            Random rand = new Random();
+            int rain = rand.Next(5, 95);
+            percipitation = "with a " + rain + "% chance of rain...";
+        }
+
         public void DisplayForcast()
         {
             ChanceofRain();
@@ -48,34 +63,7 @@ namespace LemonadeStand
             //PotentialCustomers();
             Console.ReadLine();
         }
-        public void ChanceofRain()
-        {
-            Random rand = new Random();
-            int forecast = rand.Next(1, 6);
 
-            switch (forecast)
-            {
-                case 1:
-                    
-                    break;
-                case 2:
-                    rain = rand.Next(0, 15);
-                    percipitation ="with a " + rain + "% chance of rain...";
-                    break;
-                case 3:
-                    rain = rand.Next(15, 45);
-                    percipitation = "with a " + rain + "% chance of rain...";
-                    break;
-                case 4:
-                    rain = rand.Next(40, 70);
-                    percipitation = "with a " + rain + "% chance of rain...";
-                    break;
-                case 5:
-                    rain = rand.Next(20, 90);
-                    percipitation = "with a " + rain + "% chance of rain...";
-                    break;
-            }
-        }
 
     }
 }

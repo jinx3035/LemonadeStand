@@ -11,6 +11,7 @@ namespace LemonadeStand
         public decimal numberOfCustomers;
         private int type;
         private decimal buyProbability;
+
         public decimal CustomerPopulation()
         {
             Random rand = new Random();
@@ -76,7 +77,7 @@ namespace LemonadeStand
             }
         }
 
-        private int DetermineBuyPercentage()
+        public int DetermineBuyPercentage()
         {
             decimal multipliedResult = numberOfCustomers * (buyProbability / 100);
             decimal roundedResult = Math.Round(multipliedResult, 0);
