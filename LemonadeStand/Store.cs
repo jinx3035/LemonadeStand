@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Store
+    public class Store
     {
         decimal cupPrice = .40m;
         decimal lemonPrice = .30m;

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Game
+    public class Game
     {
-        Player player;
+        public Player player;
         Day weather;
         Inventory supply;
         List<Customer> dailyCustomers = new List<Customer>();

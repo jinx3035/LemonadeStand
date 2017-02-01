@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Inventory//: IUpDate
+    public class Inventory//: IUpDate
     {
         //public void UpDate(decimal amount)
         //{
