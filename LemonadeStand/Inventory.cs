@@ -16,7 +16,6 @@ namespace LemonadeStand
         //        item.Add();
         //    }
         //}
-
         public List<Cup> cups = new List<Cup>();
         public List<Lemon> lemons = new List<Lemon>();
         public List<SugarCube> sugarCubes = new List<SugarCube>();
@@ -26,6 +25,7 @@ namespace LemonadeStand
         {
             Console.WriteLine("Ice cubes on hand are\t\t[" + (iceCubes.Count) + "]" + "\nLemons on hand are\t\t[" + (lemons.Count) + "]" + "\nPaper cups on hand are\t\t[" + (cups.Count) + "]" + "\nCups of Sugar on hand are\t[" + (sugarCubes.Count) + "]");
         }
+
         public void AddCups(decimal buyCups)
         {
             for (int i = 0; i < buyCups; i++)
@@ -34,6 +34,7 @@ namespace LemonadeStand
                 cups.Add(cup);
             }
         }
+
         public void AddLemons(decimal buyLemons)
         {
             for (int i = 0; i < buyLemons; i++)
@@ -42,6 +43,7 @@ namespace LemonadeStand
                 lemons.Add(lemon);
             }
         }
+
         public void AddSugarCubes(decimal buySugarCubes)
         {
             for (int i = 0; i < buySugarCubes; i++)

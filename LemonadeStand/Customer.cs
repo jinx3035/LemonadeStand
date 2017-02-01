@@ -15,7 +15,6 @@ namespace LemonadeStand
         public decimal CustomerPopulation()
         {
             Random rand = new Random();
-
             decimal temp = 0;
             if (temp >= 30 && temp <= 70)
             {
@@ -84,6 +83,7 @@ namespace LemonadeStand
             int endResult = Decimal.ToInt32(roundedResult);           
             return endResult;
         }
+
         private void MakeCustomers(List<Customer> dailyCustomers)
         {
             int totalBuyers = DetermineBuyPercentage();

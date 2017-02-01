@@ -8,7 +8,6 @@ namespace LemonadeStand
 {
     class Day
     {
-
         public string percipitation;
         public int temperature;
         public List<Customer> dailyCustomers = new List<Customer>();
@@ -35,7 +34,6 @@ namespace LemonadeStand
         public void CreateWeather()
         {
             //Console.ForegroundColor = ConsoleColor.Blue;
-
             Random rand = new Random();
             temperature = rand.Next(5, 105);
             if (temperature <= 25)
@@ -73,7 +71,5 @@ namespace LemonadeStand
             Console.WriteLine("So adjust your price accordingly and pay attention to your inventory as some of it may have experation dates. \n");
             Console.ReadLine();
         }
-
-
     }
 }

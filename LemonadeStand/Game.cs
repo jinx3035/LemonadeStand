@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-
     class Game
     {
         Player player;
@@ -26,13 +25,8 @@ namespace LemonadeStand
             {
                 BuyOrPlay();                
             }
-
         }
-            
-        //Create a for loop to generate a new day here?
-
-
-        
+                   
         //"Now create a switch to decide between ordering suplies and running the day."
         public void BuyOrPlay()
         {
@@ -62,6 +56,7 @@ namespace LemonadeStand
                     break;
             }              
         }
+
         public void ShowGameMenu()
         {
             Console.WriteLine("");

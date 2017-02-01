@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Wallet
+    public class Wallet
     {
-        public decimal WalletBalance = 20.00M;
-
+        public decimal walletBalance = 20.00M;
 
     public void ShowWalletBalance()
         {
-            Console.WriteLine(WalletBalance);
+            Console.WriteLine(walletBalance);
         }
     public void AddWalletBalance(decimal amount)
         {
@@ -21,7 +20,7 @@ namespace LemonadeStand
         }
     public bool CheckBalance(decimal amount)
         {
-            if(amount <= WalletBalance)
+            if(amount <= walletBalance)
             {
                 return true;
             }

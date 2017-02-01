@@ -23,16 +23,16 @@ namespace LemonadeStand
         {
             Console.WriteLine("Please enter your name so the IRS knows who to tax for this operation.");
             name = Console.ReadLine();
-            return name;
-            
+            return name;            
         }
+
         public void GreetPlayer()
         {
             Console.WriteLine("");
             Console.WriteLine("Hello " +name+ " and good luck running your Lemonade Stand. \n Remember to keep in mind that the weather affects customer turn out so make sure not to order too much.");
-            name = Console.ReadLine();
-          
+            name = Console.ReadLine();         
         }
+
         public string AskDecision()
         {
             Console.Clear();
@@ -55,7 +55,6 @@ namespace LemonadeStand
             {
                 return choice;
             }
-
         }
         //public void SetRecipe()
         //{
