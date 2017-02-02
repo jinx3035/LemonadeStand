@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Day
+    public class Day
     {
-        public string percipitation;
+        public int percipitation;
         public int temperature;
         public List<Customer> dailyCustomers = new List<Customer>();
 
@@ -23,7 +23,7 @@ namespace LemonadeStand
         {
             CreateWeather();
             ChanceOfRain();
-            DisplayForcast();
+            DisplayForcast(temperature, percipitation);
             Customer population = new Customer();
             population.CustomerPopulation();
             population.CustomerType();
@@ -33,35 +33,19 @@ namespace LemonadeStand
 
         public void CreateWeather()
         {
-            //Console.ForegroundColor = ConsoleColor.Blue;
             Random rand = new Random();
-            temperature = rand.Next(5, 105);
-            if (temperature <= 25)
-            {
-                DisplayForcast();
-            }
-                if (temperature >= 26 && temperature <= 50)
-            {
-                DisplayForcast();
-            }
-            else if (temperature > 51 && temperature < 75)
-            {
-                DisplayForcast();
-            }
-            else
-            {
-                DisplayForcast();
-            }
+            temperature = rand.Next(15, 105);
+            DisplayForcast(temperature, percipitation);           
         }
 
-        public void ChanceOfRain()
+        public int ChanceOfRain()
         {
             Random rand = new Random();
-            int rain = rand.Next(5, 95);
-            percipitation = "with a " + rain + "% chance of rain...";
+            int rain = rand.Next(0, 80);
+            return rain;
         }
 
-        public void DisplayForcast()
+        public void DisplayForcast(int temperature, int percipitation)
         {
             Console.Clear();
             ChanceOfRain();

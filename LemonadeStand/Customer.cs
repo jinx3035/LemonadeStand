@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Customer
+    public class Customer
     {
         public decimal numberOfCustomers;
-        private int type;
-        private decimal buyProbability;
+        public int type;
+        public decimal buyProbability;
 
         public decimal CustomerPopulation()
         {
@@ -55,7 +55,7 @@ namespace LemonadeStand
                     break;
                 case 5:
                     Random randBuy5 = new Random();
-                    buyProbability = rand.Next(5, 25);
+                    buyProbability = rand.Next(15, 30);
                     break;
             }
         }
@@ -76,17 +76,17 @@ namespace LemonadeStand
             }
         }
 
-        public int DetermineBuyPercentage()
+        public decimal DetermineBuyPercentage()
         {
             decimal multipliedResult = numberOfCustomers * (buyProbability / 100);
             decimal roundedResult = Math.Round(multipliedResult, 0);
-            int endResult = Decimal.ToInt32(roundedResult);           
+            decimal endResult = Decimal.ToInt32(roundedResult);           
             return endResult;
         }
 
-        private void MakeCustomers(List<Customer> dailyCustomers)
+        public void MakeCustomers(List<Customer> dailyCustomers)
         {
-            int totalBuyers = DetermineBuyPercentage();
+            decimal totalBuyers = DetermineBuyPercentage();
             for (int i = 0; i < totalBuyers; i++)
             {
                 Customer customer = new Customer();
