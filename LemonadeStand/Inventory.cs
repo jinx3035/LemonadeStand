@@ -17,8 +17,10 @@ namespace LemonadeStand
         //    }
         //}
 
-        Player player;
-        Inventory ingredient;
+
+
+        // Player player;
+        Ingredients name;
         public List<Cup> cups = new List<Cup>();
         public List<Lemon> lemons = new List<Lemon>();
         public List<SugarCube> sugarCubes = new List<SugarCube>();
@@ -37,13 +39,13 @@ namespace LemonadeStand
                 cups.Add(cup);
             }
         }
-        public void RemoveCups(decimal soldCups)
-        {
-            for (int i = 0; i < soldCups; i++)
-            { 
-                cups.RemoveAt(0);
-            }
-        }
+        //public void RemoveCups(decimal soldCups)
+        //{
+        //    for (int i = 0; i < soldCups; i++)
+        //    { 
+        //        cups.RemoveAt(0);
+        //    }
+        //}
 
         public void AddLemons(decimal buyLemons)
         {

@@ -11,7 +11,6 @@ namespace LemonadeStand
         public Player player;
         Day weather;
         Inventory supply;
-        List<Customer> dailyCustomers = new List<Customer>();
 
         public void StartGame()
         {

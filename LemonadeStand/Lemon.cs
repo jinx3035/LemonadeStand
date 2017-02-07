@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public class Lemon: Ingredients
+
+    public class Lemon: Ingredients            
     {
+        string name = "lemon";
     }
 }

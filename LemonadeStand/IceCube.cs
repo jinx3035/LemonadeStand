@@ -8,5 +8,6 @@ namespace LemonadeStand
 {
     public class IceCube: Ingredients
     {
+        string name = "ice cube";
     }
 }
