@@ -9,6 +9,9 @@ namespace LemonadeStand
 
     public class Lemon: Ingredients            
     {
-        string name = "lemon";
+        public override void IngredientName()
+        {
+            Console.WriteLine("lemon");
+        }
     }
 }

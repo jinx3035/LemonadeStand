@@ -56,10 +56,5 @@ namespace LemonadeStand
                 return choice;
             }
         }
-        //public void SetRecipe()
-        //{
-        //    Recipe recipe = new Recipe();
-        //    recipe.MakeRecipe();
-        //}
     }
 }

@@ -8,6 +8,9 @@ namespace LemonadeStand
 {
     public class SugarCube: Ingredients
     {
-        string name = "sugar cube";
+        public override void IngredientName()
+        {
+            Console.WriteLine("sugar cube");
+        }
     }
 }

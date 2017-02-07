@@ -34,7 +34,7 @@ namespace LemonadeStand
             {
                 case "1":
                     Store goShopping = new Store();
-                    goShopping.BuyItems(player, player.ingredient);
+                    goShopping.BuyItems(player, inventory);
                     BuyOrPlay();
 
                     break;

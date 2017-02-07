@@ -14,10 +14,12 @@ namespace LemonadeStand
         {
             Console.WriteLine(walletBalance);
         }
+
     public void AddWalletBalance(decimal amount)
         {
 
         }
+
     public bool CheckBalance(decimal amount)
         {
             if(amount <= walletBalance)

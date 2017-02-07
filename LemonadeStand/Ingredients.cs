@@ -8,6 +8,9 @@ namespace LemonadeStand
 {
     public class Ingredients
     {
-        
+        public virtual void IngredientName()
+        {
+            Console.WriteLine("Ingredient");
+        }
     }
 }

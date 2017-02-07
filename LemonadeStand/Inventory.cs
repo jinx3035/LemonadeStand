@@ -9,7 +9,7 @@ namespace LemonadeStand
     public class Inventory//: IUpDate
     {
         //public void UpDate(decimal amount)
-        //{
+        //{           
         //    for (int i = 0; i < amount; i++)
         //    {
         //        Ingredients item = new Ingredients();
@@ -20,11 +20,11 @@ namespace LemonadeStand
 
 
         // Player player;
-        Ingredients name;
         public List<Cup> cups = new List<Cup>();
         public List<Lemon> lemons = new List<Lemon>();
         public List<SugarCube> sugarCubes = new List<SugarCube>();
         public List<IceCube> iceCubes = new List<IceCube>();
+        public int ingredient;
         
         public void InventoryReport()
         {
@@ -71,6 +71,11 @@ namespace LemonadeStand
                 IceCube iceCube = new IceCube();
                 iceCubes.Add(iceCube);
             }
+        }
+
+        public void UpDate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

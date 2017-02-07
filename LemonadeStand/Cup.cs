@@ -9,6 +9,9 @@ namespace LemonadeStand
     
     public class Cup: Ingredients
     {
-        public string name = "cup";
+        public override void IngredientName()
+        {
+            Console.WriteLine("cup");
+        }
     }
 }
